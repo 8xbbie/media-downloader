@@ -10,8 +10,16 @@ import { IdExtractorService } from '../id-extractor.service';
 })
 export class LinkContainerComponent {
   private idExtractor = new IdExtractorService();
+  public videoUrl = "";
+  public constructor() {
+    
+
+  }
   public getVideo(videoLink: string){
     let videoId = this.idExtractor.extractYoutubeVideoId(videoLink);
+
+    localStorage.setItem("videoId", videoId!.toString());
+    localStorage.setItem("videoUrl", videoLink);
     alert(videoId);
 
   }

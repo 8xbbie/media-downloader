@@ -3,3 +3,21 @@ header{
   font-weight: bolder;
   text-align: center;
 }
+nav{
+  text-align: center;
+  padding: auto;
+}
+header{
+  border: 1px solid;
+  border-color: black;
+  padding: 20px;
+  margin: 40px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  margin: 20px;
+  border-bottom: 1px solid;
+  border-color: black;
+}

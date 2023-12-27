@@ -12,11 +12,11 @@ export class VideoRequesterService {
   private options = {
     method: 'GET',
     url: 'https://ytstream-download-youtube-videos.p.rapidapi.com/dl',
-    params: {id: 'UxxajLWwzqY'},
-    headers: {
-      'X-RapidAPI-Key': 'db659f124bmsh2277f04934ef1bap1ae9ecjsn4d82b9efbcea',
-      'X-RapidAPI-Host': 'ytstream-download-youtube-videos.p.rapidapi.com'
-    }
+    params: {id: ''},
+    headers:[
+      {'X-RapidAPI-Key': 'db659f124bmsh2277f04934ef1bap1ae9ecjsn4d82b9efbcea'},
+      {'X-RapidAPI-Host': 'ytstream-download-youtube-videos.p.rapidapi.com'}
+    ]
   };
   private url = "https://ytstream-download-youtube-videos.p.rapidapi.com/dl";
   public values : any;
@@ -31,11 +31,13 @@ export class VideoRequesterService {
   public getVideo(): Observable<Video>{
 
       let videoId = localStorage.getItem("videoId");
-      const headers = new HttpHeaders();
-      const params = new HttpParams();
-      params.set("id", videoId!);
-      headers.set('X-RapidAPI-Key', 'db659f124bmsh2277f04934ef1bap1ae9ecjsn4d82b9efbcea');
-      headers.set('X-RapidAPI-Host', 'ytstream-download-youtube-videos.p.rapidapi.com');
+      let headers = new HttpHeaders();
+      headers = headers.set("X-RapidAPI-Key", "db659f124bmsh2277f04934ef1bap1ae9ecjsn4d82b9efbcea");
+      headers = headers.set("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
+
+      // console.log(headers);
+
+      console.log("keys",headers.keys());
       console.log(videoId);
       return this.http.get<Video>(this.url + "?id=" + videoId, {headers});
   }

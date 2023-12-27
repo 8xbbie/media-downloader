@@ -12,7 +12,6 @@ export class LinkContainerComponent {
   private idExtractor = new IdExtractorService();
   public videoUrl = "";
   public constructor() {
-    
 
   }
   public getVideo(videoLink: string){

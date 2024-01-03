@@ -13,7 +13,7 @@ import { NzButtonComponent } from 'ng-zorro-antd/button';
   templateUrl: './video-container.component.html',
   styleUrl: './video-container.component.css'
 })
-export class VideoContainerComponent implements OnInit{
+export class VideoContainerComponent{
   public result!: Video;
   public formats!: Format[];
   public thumbnail!: Thumbnail;
@@ -24,17 +24,13 @@ export class VideoContainerComponent implements OnInit{
 
   }
 
-  ngOnInit(): void {
-    this.getResults();
-  }
-
   public displayResults(){
     // console.log(this.result);
+    this.getResults();
     this.thumbnail = this.result.thumbnail[0];
     this.description = this.result.description;
     this.formats = this.result.formats;
     console.log(this.result);
-
   }
 
   public getResults(){
@@ -43,7 +39,6 @@ export class VideoContainerComponent implements OnInit{
 
     );
     // console.log(this.result);
-
   }
 
 }

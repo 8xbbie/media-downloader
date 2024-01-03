@@ -1,6 +1,9 @@
-<p >video-container works!</p>
-<p>
-  {{result}}
-</p>
-<button (click)="displayResults()">Get Video</button>
+
+<button (click)="displayResults()" nz-button nzType = "default">Get Video</button>
+
+<div *ngFor="let format of formats" >
+  <img [src]="result.thumbnail[0].url" [alt]="result.title" [width]="result.thumbnail[0].width" [height]="result.thumbnail[0].height">
+  Quality {{format.quality}} <br>
+  <a [href] = "format.url" download>{{ result.title }}</a>
+</div>
 

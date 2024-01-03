@@ -1,8 +1,12 @@
 
-<div class = "center">
+<!-- <div class = "center">
   <input type="url" #videoLink>
   <button (click) = "getVideo(videoLink.value)">Get Video</button>
-</div>
-
-
+</div> -->
+<nz-input-group [nzSuffix]="buttonThing">
+  <input type="text" nz-input [(ngModel)]="videoUrl" placeholder="input with clear icon" />
+</nz-input-group>
+<ng-template #buttonThing>
+  <button (click) = "getVideo()" nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
+</ng-template>
 

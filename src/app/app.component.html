@@ -1,9 +1,33 @@
-<header>
-  Media Downloader
-</header>
-<nav>
-  <a routerLink = "/link">Link</a>
-  <a routerLink = "/video">Video</a>
-</nav>
+<nz-layout class="layout">
+  <nz-layout>
+    <nz-header>
 
-<router-outlet></router-outlet>
+      <h1 nz-typography>
+        Media Downloader
+      </h1>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <nz-tabset nzLinkRouter nzCentered>
+          <nz-tab>
+            <a *nzTabLink nz-tab-link routerLink="/link" >
+              Link
+            </a>
+            <app-link-container></app-link-container>
+          </nz-tab>
+          <nz-tab>
+            <a *nzTabLink nz-tab-link routerLink="/video">
+              Video
+            </a>
+            <app-video-container></app-video-container>
+
+          </nz-tab>
+
+        </nz-tabset>
+
+
+      </div>
+    </nz-content>
+    <nz-footer></nz-footer>
+  </nz-layout>
+</nz-layout>

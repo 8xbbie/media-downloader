@@ -1,23 +1,28 @@
-header{
-  font-size: xx-large;
-  font-weight: bolder;
-  text-align: center;
-}
-nav{
-  text-align: center;
-  padding: auto;
-}
-header{
-  border: 1px solid;
-  border-color: black;
-  padding: 20px;
-  margin: 40px;
+.layout {
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  padding: 10px;
-  margin: 20px;
-  border-bottom: 1px solid;
-  border-color: black;
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  margin: 24px 16px 0;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+nz-footer {
+  text-align: center;
 }

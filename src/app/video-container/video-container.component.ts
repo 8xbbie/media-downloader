@@ -3,11 +3,13 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { VideoRequesterService } from '../video-requester.service';
 import { Format, Video } from '../interface/video';
+import { CommonModule } from '@angular/common';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'app-video-container',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NzButtonComponent],
   templateUrl: './video-container.component.html',
   styleUrl: './video-container.component.css'
 })
@@ -27,6 +29,10 @@ export class VideoContainerComponent implements OnInit{
   }
 
   public displayResults(){
+    // console.log(this.result);
+    this.thumbnail = this.result.thumbnail[0];
+    this.description = this.result.description;
+    this.formats = this.result.formats;
     console.log(this.result);
 
   }
